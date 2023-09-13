@@ -1,0 +1,15 @@
+1. Virtual environments make innovations for certain performance to maintain effectiveness and security.
+They are used for software development and tests that make sure the software works well without damaging the software itself.
+This can be done by creating a virtual environment that simulates the real environment and test the software there.
+In addition, virtual environments can be used to create separate security environments that restrict access to normal information on the real system.
+
+2. Virtual environments work by creating a layer that separates the real system and the user from the virtual environment.
+ This is done by technologies like virtualization. This allows the user to operate within the virtual environment as if it were a real system, but in reality
+  it is running on top of another system .
+
+3. To create and use virtual environments, you need to download virtualization platforms such as VMware, VirtualBox. 
+I can create a virtual machine by installing these software and adjust the virtual environment according to what I need.
+ The virtual environment resembled a real system.
+
+ 4. I was unable to run the code immediately because the virtual environment does not contain all the libraries and 
+ it is necessary to download the Threads library in order for the code to work.
