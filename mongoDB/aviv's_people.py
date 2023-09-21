@@ -33,7 +33,49 @@ army = [
      { "_id": 50,"name": "ido", "age": 22, "role": "Developer"},
     { "_id": 60,"name": "yarden", "age": 24, "role": "DevOps"}
 ]
-
-#army_data.insert_many(army)
 army_data.delete_one({"name": "Lihi"})
+
+query_1 = {
+    "age": {"$lt": 23},  
+    "role": "DevOps"  
+}
+result1 = army_data.find_one(query_1)
+if result1:
+    print(f"Name of the person: {result1['name']}")
+else:
+    print("No person matching the criteria found.")
+
+same_age_person = army_data.find_one({"age": result1["age"], "_id": {"$ne": result1["_id"]}})
+if same_age_person:
+    new_role = same_age_person["role"]
+    army_data.update_one(
+        {"_id": result1["_id"]},
+        {"$set": {"role": new_role}}
+    )
+    print(f"Replaced {result1['name']}'s role with {same_age_person['name']}'s role.")
+else:
+    print("No person of the same age found.")
+
+
+query_older_than_23 = {"age": {"$gt": 23}}
+older_people = list(army_data.find(query_older_than_23).sort("age", -1))
+
+
+for person in older_people:
+    if person["age"] > 23:
+        friends_data.insert_one(person)
+
+for person in older_people:
+    print(f"Name: {person['name']}, Age: {person['age']}, role: {person['role']}")
+
+for person in army_data.find({"age": {"$lte": 23}}).sort("age"):
+    print(f"Name: {person['name']}, Age: {person['age']}, role: {person['role']}")
+
+
+
+
+
+
+
+
 
