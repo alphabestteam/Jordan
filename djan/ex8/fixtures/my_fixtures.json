@@ -1,0 +1,299 @@
+[
+    {
+        "model": "people.person",
+        "id_number": 1,
+        "fields": {
+            "name": "Shira",
+            "birth_date": "2001-01-23",
+            "city": "Rishon LeZion"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 2,
+        "fields": {
+            "name": "Maayan",
+            "birth_date": "2001-08-09",
+            "city": "Rishon LeZion"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 3,
+        "fields": {
+            "name": "Alex",
+            "birth_date": "1969-10-27",
+            "city": "Ashkelon"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 4,
+        "fields": {
+            "name": "Shira",
+            "birth_date": "2001-08-09",
+            "city": "Rishon LeZion"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 5,
+        "fields": {
+            "name": "Daniel",
+            "birth_date": "2006-07-10",
+            "city": "Rishon LeZion"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 6,
+        "fields": {
+            "name": "Roni",
+            "birth_date": "2006-01-23",
+            "city": "Holon"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 7,
+        "fields": {
+            "name": "Maya",
+            "birth_date": "2001-05-09",
+            "city": "Cesaria"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 8,
+        "fields": {
+            "name": "Orly",
+            "birth_date": "1970-10-27",
+            "city": "Ashkelon"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 9,
+        "fields": {
+            "name": "Danit",
+            "birth_date": "1980-12-2",
+            "city": "Bat Yam"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 10,
+        "fields": {
+            "name": "Amit",
+            "birth_date": "2010-02-20",
+            "city": "Ashkelon"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 11,
+        "fields": {
+            "name": "Yuval",
+            "birth_date": "1999-02-18",
+            "city": "Kibbutz Beeri"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 12,
+        "fields": {
+            "name": "Itay",
+            "birth_date": "2003-06-18",
+            "city": "Raanana"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 13,
+        "fields": {
+            "name": "Eden",
+            "birth_date": "2001-02-19",
+            "city": "Raanana"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 14,
+        "fields": {
+            "name": "Roee",
+            "birth_date": "1990-09-21",
+            "city": "Raanana"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 15,
+        "fields": {
+            "name": "Inbal",
+            "birth_date": "2002-05-20",
+            "city": "Gan Yavne"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 16,
+        "fields": {
+            "name": "Ron",
+            "birth_date": "1950-07-10",
+            "city": "Raanana"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 17,
+        "fields": {
+            "name": "Noa",
+            "birth_date": "1987-03-09",
+            "city": "Ashdod"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 18,
+        "fields": {
+            "name": "Shahar",
+            "birth_date": "2000-09-21",
+            "city": "Jerusalem"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 19,
+        "fields": {
+            "name": "Yoav",
+            "birth_date": "1989-08-21",
+            "city": "Herzliya"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 20,
+        "fields": {
+            "name": "Shir",
+            "birth_date": "2001-07-10",
+            "city": "Rehovot"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 21,
+        "fields": {
+            "name": "Aviv",
+            "birth_date": "1950-09-21",
+            "city": "Eilat"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 22,
+        "fields": {
+            "name": "Dor",
+            "birth_date": "1952-06-01",
+            "city": "Haifa"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 23,
+        "fields": {
+            "name": "May",
+            "birth_date": "2010-06-01",
+            "city": "Raanana"
+        }
+    },
+    {
+        "model": "people.person",
+        "id_number": 24,
+        "fields": {
+            "name": "Bar",
+            "birth_date": "2012-07-11",
+            "city": "Raanana"
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 3,
+        "fields": {
+            "work": "Bank",
+            "base_salary": 10121,
+            "children": [
+                1,
+                10
+            ]
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 8,
+        "fields": {
+            "work": "intel",
+            "base_salary": 60000,
+            "children": [
+                10
+            ]
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 9,
+        "fields": {
+            "work": "Google",
+            "base_salary": 25500,
+            "children": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 11,
+        "fields": {
+            "work": "Bank",
+            "base_salary": 10121,
+            "children": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 14,
+        "fields": {
+            "work": "Amdocs",
+            "base_salary": 30125,
+            "children": [
+                23,
+                24
+            ]
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 17,
+        "fields": {
+            "work": "Google",
+            "base_salary": 25000,
+            "children": [
+                23,
+                24
+            ]
+        }
+    },
+    {
+        "model": "people.parent",
+        "id_number": 22,
+        "fields": {
+            "work": "Google",
+            "base_salary": 41000,
+            "children": [
+                17
+            ]
+        }
+    }
+    
+]
