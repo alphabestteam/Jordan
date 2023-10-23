@@ -1,62 +1,68 @@
-from django.http import JsonResponse
-from django.views import View
-from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
+from django.views import APIView
 from .models import Book
 from .serializers import BookSerializer
 from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from rest_framework import status
 
-class BookCreateView(View):
-    @csrf_exempt
+
+class BookCreateView(APIView):
     def post(self, request):
-        serializer = BookSerializer(data=request.POST)
+        serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data, status=201)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class BookListView(View):
+class BookListView(APIView):
     def get(self, request):
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(serializer.data)
 
-class BookDetailView(View):
+class BookDetailView(APIView):
     def get(self, request, book_id):
-        book = get_object_or_404(Book, pk=book_id)
+        book = get_object_or_404(Book, pk= id)
         serializer = BookSerializer(book)
-        return JsonResponse(serializer.data)
+        return Response(serializer.data)
 
-class BookUpdateView(View):
-    @csrf_exempt
+class BookUpdateView(APIView):
     def put(self, request, book_id):
         book = get_object_or_404(Book, pk=book_id)
-        serializer = BookSerializer(book, data=request.POST)
+        serializer = BookSerializer(book, data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data)
-        return JsonResponse(serializer.errors, status=400)
+            return Response(serializer.data)
 
-class BookDeleteView(View):
-    @csrf_exempt
+class BookDeleteView(APIView):
     def delete(self, request, book_id):
         book = get_object_or_404(Book, pk=book_id)
         book.delete()
-        return JsonResponse({'message': 'Book deleted successfully'}, status=200)
-
-@csrf_exempt
+        return Response(serializer.data, status=status.HTTP_201_DELETED)
+      
+@api_view(['GET'])
 def list_books_by_genre(request):
-    genre_filter = request.GET.get('genre') 
+    genre_filter = request.GET.get('genre')
     if not genre_filter:
-        return JsonResponse({'error': 'Genre parameter is required.'}, status=400)
-    books = Book.objects.filter(genre=genre_filter)
-    book_data = [{'title': book.title, 'author': book.author, 'genre': book.genre} for book in books]
-    return JsonResponse(book_data, safe=False)
+        return Response({'error': 'Genre parameter is required.'}, status=status.HTTP_400_BAD_REQUEST)
 
-@csrf_exempt
+    books = Book.objects.filter(genre=genre_filter)
+    serializer = BookSerializer(books, many=True) 
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['GET'])
 def search_books_by_title(request):
-    title_query = request.GET.get('title') 
+    title_query = request.GET.get('title')
     if not title_query:
-        return JsonResponse({'error': 'Title parameter is required.'}, status=400)
-    books = Book.objects.filter(title__icontains=title_query)
-    book_data = [{'title': book.title, 'author': book.author, 'genre': book.genre} for book in books]
-    return JsonResponse(book_data, safe=False)
+        return Response({'error': 'Title parameter is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+
+
+
+
+

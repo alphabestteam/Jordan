@@ -9,7 +9,7 @@ class Book(models.Model):
     publication_year = models.PositiveIntegerField()
     genre = models.CharField(max_length=50)
     description = models.TextField()
-
+    #VALIDATE AUTHOR NAME FIELD
     def validate_author_name(value):
      special_characters = ['!', '@', '#', '$', '%', '^', '&', '*']
      for char in special_characters:
