@@ -5,12 +5,17 @@ from rest_framework import status
 from .models import FileForm
 from .serializers import FileFormSerializer
 from django.shortcuts import get_object_or_404
+from rest_framework.decorators import api_view
+from rest_framework import viewsets
+from users.models import UserProfile
 
+class FileFormViewSet(viewsets.ModelViewSet):
+    queryset = FileForm.objects.all()
+    serializer_class = FileFormSerializer
 
-class FileCreateView(APIView):
-    def post(self, request):
-        serializer = FileFormSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+@api_view(['POST'])
+def add_user_to_shared_users(request, uploader, id_number):
+        file_from = get_object_or_404(FileForm, uploader=uploader)
+        user = get_object_or_404(UserProfile, id_number=id_number)  
+        file_from.form.shared_users.add(user) 
+        return Response({"message": "User added to shared users"}, status=status.HTTP_201_CREATED)

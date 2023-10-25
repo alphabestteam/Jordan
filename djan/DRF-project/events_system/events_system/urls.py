@@ -6,5 +6,5 @@ urlpatterns = [
     path('api/', include('events.urls')),  
     path('api/', include('users.urls')),  
     path('api/', include('file.urls')),  
-    path('api/', include('message.urls')),  
+    path('api/', include('massage.urls')),  
 ]

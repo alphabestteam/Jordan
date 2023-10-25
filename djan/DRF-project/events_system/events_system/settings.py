@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'events',
     'users',
     'file',
-    'message',
+    'massage',
 ]
 
 MIDDLEWARE = [
