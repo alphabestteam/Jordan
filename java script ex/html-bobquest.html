@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Run JavaScript</title>
+</head>
+<body>
+    <h1>Patrick is lost! You have to find him</h1>
+    <button id="button">Start conversation</button>
+    <script>
+        document.getElementById("button").addEventListener("click", initiateSearchForPatrick);
+
+        function sendMessageToBob(message) {
+            alert(`Bob, ${message}`);
+        }
+
+        function isBobLookingForPatrick() {
+            return confirm("Bob, are you currently looking for Patrick?");
+        }
+
+        function announceBobIsGoingOnAJourney() {
+            sendMessageToBob("Patrick is lost, and Bob is going on a journey to find him.");
+        }
+
+        function didBobFindPatrick() {
+            const response = prompt("Did you find Patrick? (yes/no)");
+
+            if (response === "yes") {
+                alert("Great job, Bob! You found Patrick.");
+            } else {
+                sendMessageToBob("Keep looking, Bob!");
+                initiateSearchForPatrick();
+            }
+        }
+
+        function initiateSearchForPatrick() {
+            sendMessageToBob("Patrick is lost. You need to look for him!");
+
+            if (isBobLookingForPatrick()) {
+                announceBobIsGoingOnAJourney();
+                didBobFindPatrick();
+            } else {
+                sendMessageToBob("Let's go, Bob! Patrick needs you.");
+            }
+        }
+    </script>
+   
+</body>
+</html>
