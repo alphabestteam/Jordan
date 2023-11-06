@@ -35,9 +35,19 @@ loremIpsumWordArr.forEach(word => {
     const style = "background-color: "+ getRandomColor();
     spanElement.setAttribute("style", style)
     spanElement.textContent = word;
-    spanElement.className = "random-word";
+    spanElement.className = "random-words";
     wordsRandomElement.appendChild(spanElement)
 });
+
+changeColorButton.addEventListener("click", changeTextColor);
+
+function changeTextColor() {
+    const randomWordElements = document.querySelectorAll('.random-words');
+    randomWordElements.forEach(wordElement => {
+        const randomColor = getRandomColor();
+        wordElement.style.backgroundColor = randomColor;
+    });
+}
 
 
 
