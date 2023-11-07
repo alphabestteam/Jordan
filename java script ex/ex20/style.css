@@ -91,3 +91,22 @@ p {
 .light-yellow {
   background-color: #FFFF99;
 }
+
+.leaderboard-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+th, td {
+  
+  padding: 8px;
+  text-align: left;
+}
+
